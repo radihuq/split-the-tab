@@ -1,4 +1,4 @@
-# balnk react-template (16.12.0)
+# blank react-template (16.12.0)
 Cleaned up `npx create-react-app` template
 
 ### Installation
