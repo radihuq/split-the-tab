@@ -1,4 +1,4 @@
-# react-template (16.12.0)
+# balnk react-template (16.12.0)
 Cleaned up `npx create-react-app` template
 
 ### Installation
@@ -15,7 +15,7 @@ Clone this repo and run `npm install`
 ### Usage
 Recommended actions after installation:
 
-#### ./public/index.html
+##### ./public/index.html
 * Update path to favicon
 * Update path to logos
 * Change value of `<title>` element
@@ -23,15 +23,15 @@ Recommended actions after installation:
 * Add Google Fonts CDN (optional)
 * Add Google Analytics script (optional)
 
-#### ./public/manifest.json
+##### ./public/manifest.json
 * Update `short_name`
 * Update `name`
 * Update path to favicon
 * Update path to logos
 
-#### ./package.json
+##### ./package.json
 * Update `name`
 
-#### Miscellaneous
+##### Miscellaneous
 * Update favicon
 * Update logos (192x192, 512x512)
