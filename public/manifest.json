@@ -1,6 +1,6 @@
 {
-    "short_name": "App",
-    "name": "Description Of App Here",
+    "short_name": "Split The Tab",
+    "name": "Easy Tab Split Calculator",
     "icons": [
         {
             "src": "favicon.ico",
