@@ -1,0 +1,48 @@
+.dMenuChildDiv {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.dMenuLogoDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dMenuLogoItemsDiv {
+    margin-left: 2em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dMenuLogoText {
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.dMenuLogoDiv:hover {
+    cursor: default;
+}
+
+.dMenuItemsDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dMenuButton {
+    height: 100%;
+    margin-right: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

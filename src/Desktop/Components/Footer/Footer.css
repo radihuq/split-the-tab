@@ -1,0 +1,18 @@
+.dFooterChildDiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(45, 52, 54, 1);
+}
+
+.dFooterItem {
+    margin: 0 1em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dFooterItem:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+}
