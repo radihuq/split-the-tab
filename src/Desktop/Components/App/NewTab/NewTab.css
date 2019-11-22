@@ -1,0 +1,17 @@
+.newTabParentDiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dNewTabFormTitle {
+    font-size: 1.5em;
+}
+
+.dNewTabFormField {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+}

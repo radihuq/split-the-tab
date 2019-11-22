@@ -19,6 +19,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.9;
+}
+
+.dMenuLogoItemsDiv:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 .dMenuLogoText {

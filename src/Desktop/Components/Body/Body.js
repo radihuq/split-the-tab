@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import './Body.css';
 import Demo from '../../Assets/Body/FoldDemo.svg';
 
@@ -7,17 +8,22 @@ import {Input, Button} from 'semantic-ui-react';
 const Body = () => {
 
     const [mobileScreen, setMobileScreen] = useState((window.innerWidth < 600) ? true : false);
+    const [occasionPlaceholderText, setOccasionPlaceholderText] = useState((window.innerWidth < 900) ? 'Friday night drinks, New York trip...' : 'Friday night drinks, Vacation to New York, Business Trip...');
     const [occasionInput, setOccasionInput] = useState('');
+
+    const history = useHistory();
 
     useEffect(() => {
         function handleWindowResize () {
             if (mobileScreen) {
                 if (window.innerWidth > 600) {
+                    setOccasionPlaceholderText('Friday night drinks, Vacation to New York, Business Trip...');
                     setMobileScreen(false);
                 }
             }
             if (!mobileScreen) {
                 if (window.innerWidth < 600) {
+                    setOccasionPlaceholderText('Friday night drinks, New York trip...');
                     setMobileScreen(true);
                 }  
             }
@@ -32,8 +38,8 @@ const Body = () => {
     }
 
     const handleFoldCTAFormSubmit = (e) => {
-        alert(occasionInput);
-
+        sessionStorage.setItem('occasion', occasionInput);
+        history.push(`/newtab`);
         e.preventDefault();
     }
 
@@ -48,7 +54,10 @@ const Body = () => {
                     <h1 className="dBodyFoldText">Remove the awkwardness from asking your friends to pay you back</h1>
                     <form className="dBodyFoldCTAForm" onSubmit={handleFoldCTAFormSubmit}>
                         <div style={{width: '80%'}}>
-                            <Input required size='large' placeholder='Friday night drinks...' fluid onChange={handleOccasionInputChange} />
+                            <Input required size='large' 
+                            placeholder={occasionPlaceholderText} 
+                            fluid 
+                            onChange={handleOccasionInputChange} />
                         </div>
                         <div style={{width: '80%', marginTop: '1em'}}>
                             <Button fluid size='large' type='submit' style={{}}>START A TAB</Button>
