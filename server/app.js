@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+require('dotenv/config');
 
-const SERVER_PORT = 3000;
+const SERVER_PORT = process.env.SERVER_PORT;
 
 //Middlewares
 app.use(cors());
