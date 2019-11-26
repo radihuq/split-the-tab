@@ -15,6 +15,10 @@ const TabDetails = ({data, feed}) => {
 
     totalExpense = Math.round(totalExpense * 100) / 100;
 
+    const handleCalculatePayoutClick = () => {
+        history.push(`/tab/payout?id=${data.id}`);
+    }
+
     const handleInviteLinkClick = () => {
         history.push(`/invite?id=${data.id}`);
     }
@@ -22,7 +26,7 @@ const TabDetails = ({data, feed}) => {
     return (
         <div className="dTabDetailsDashboardDiv">
             <div>
-                <Button color='teal'>Calculate Payout</Button>
+                <Button color='teal' onClick={handleCalculatePayoutClick}>Calculate Payout</Button>
                 <Button onClick={handleInviteLinkClick}>Get Invite Link</Button>
             </div>
             

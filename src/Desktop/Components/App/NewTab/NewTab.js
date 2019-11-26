@@ -36,6 +36,12 @@ const NewTab = () => {
 
     const handleNewTabFormSubmit = (e) => {
         tabDetails.id = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 8);
+        tabDetails.users = [
+            {name: 'Radi', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1000},
+            {name: 'John', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1001},
+            {name: 'Alex', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1002},
+            {name: 'Chris', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1003}
+        ]
         localStorage.setItem('tabDetails', JSON.stringify(tabDetails));
         history.push(`/tab?id=${tabDetails.id}`);
         e.preventDefault();

@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer';
 import NewTab from './Components/App/NewTab/NewTab';
 import Tab from './Components/App/Tab/Tab';
 import Invite from './Components/App/Invite/Invite';
+import Payout from './Components/App/Payout/Payout';
 
 const DesktopApp = () => {
 
@@ -23,6 +24,7 @@ const DesktopApp = () => {
                         <Route path="/newtab" exact component={NewTab} />
                         <Route path="/tab" exact component={Tab} />
                         <Route path="/invite" exact component={Invite} />
+                        <Route path="/tab/payout" exact component={Payout} />
                         <Route path="/" component={Body} />
                     </Switch>
 
