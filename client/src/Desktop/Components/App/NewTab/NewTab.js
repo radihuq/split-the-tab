@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import axios from 'axios';
 import './NewTab.css';
 
 import {Segment, Form, Input, Button} from 'semantic-ui-react';
@@ -41,9 +42,22 @@ const NewTab = () => {
             {name: 'John', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1001},
             {name: 'Alex', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1002},
             {name: 'Chris', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1003}
-        ]
+        ];
+
         localStorage.setItem('tabDetails', JSON.stringify(tabDetails));
         history.push(`/tab?id=${tabDetails.id}`);
+
+        // axios.post(`${process.env.SERVER_ADDRESS}/api/tab/new`, )
+        // .then((res) => {
+        //     console.log(res);
+        //     localStorage.setItem('tabDetails', JSON.stringify(tabDetails));
+        //     history.push(`/tab?id=${tabDetails.id}`);    
+        // })
+        // .catch((err) => {
+        //     console.log(err);
+        //     alert(`There was a problem! Please try again.`);
+        // });
+
         e.preventDefault();
     }
 
