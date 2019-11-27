@@ -4,6 +4,9 @@ const TabModel = require('../models/TabModel');
 const crypto = require('crypto');
 
 router.post(`/new`, async (req, res) => {
+
+    console.log(req.body);
+
     const userInfo = {
         id: req.body.creator
     }
@@ -22,11 +25,12 @@ router.post(`/new`, async (req, res) => {
         users: [req.body.creator]
     }
 
-    const tab = new TabModel(modelDetails);
+    // const tab = new TabModel(modelDetails);
 
     try {
-        const addTab = await tab.save();
-        res.status(200).json({message: `Received POST request`, response: addTab});
+        res.status(200).json({message: `Received POST request`, response: modelDetails});
+        // const addTab = await tab.save();
+        // res.status(200).json({message: `Received POST request`, response: addTab});
     } catch(err) {
         console.log(err);
         res.status(400).json({message: `error`, error: err});

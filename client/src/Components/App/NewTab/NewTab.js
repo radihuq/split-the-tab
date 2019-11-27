@@ -7,12 +7,12 @@ import {Segment, Form, Input, Button} from 'semantic-ui-react';
 
 const NewTab = () => {
 
-    const [tabDetails, setTabDetails] = useState({name: '', description: '', budget: ''});
+    const [tabDetails, setTabDetails] = useState({title: '', description: '', budget: ''});
 
     const history = useHistory();
 
     if (sessionStorage.getItem('occasion')) {
-        setTabDetails({...tabDetails, name: sessionStorage.getItem('occasion')});
+        setTabDetails({...tabDetails, title: sessionStorage.getItem('occasion')});
         sessionStorage.removeItem('occasion');
     }
 
@@ -21,8 +21,8 @@ const NewTab = () => {
         let type = e.target.id;
 
         switch (type) {
-            case 'tabNameInput':
-                setTabDetails({...tabDetails, name: input});
+            case 'tabTitleInput':
+                setTabDetails({...tabDetails, title: input});
                 break;
             case 'tabDescriptionInput':
                 setTabDetails({...tabDetails, description: input});
@@ -44,19 +44,26 @@ const NewTab = () => {
             {name: 'Chris', picture: 'https://react.semantic-ui.com/images/avatar/small/daniel.jpg', id: 1003}
         ];
 
-        localStorage.setItem('tabDetails', JSON.stringify(tabDetails));
-        history.push(`/tab?id=${tabDetails.id}`);
+        // localStorage.setItem('tabDetails', JSON.stringify(tabDetails));
+        // history.push(`/tab?id=${tabDetails.id}`);
 
-        // axios.post(`${process.env.SERVER_ADDRESS}/api/tab/new`, )
-        // .then((res) => {
-        //     console.log(res);
-        //     localStorage.setItem('tabDetails', JSON.stringify(tabDetails));
-        //     history.push(`/tab?id=${tabDetails.id}`);    
-        // })
-        // .catch((err) => {
-        //     console.log(err);
-        //     alert(`There was a problem! Please try again.`);
-        // });
+        const data = {
+            creator: '123abc456',
+            title: tabDetails.title,
+            description: tabDetails.description,
+            budget: tabDetails.budget
+        }
+
+        axios.post(`${process.env.REACT_APP_SERVER_ADDRESS}/api/tab/new`, data)
+        .then((res) => {
+            console.log(res);
+            localStorage.setItem('tabDetails', JSON.stringify(tabDetails));
+            history.push(`/tab?id=${tabDetails.id}`);    
+        })
+        .catch((err) => {
+            console.log(err);
+            alert(`There was a problem! Please try again.`);
+        });
 
         e.preventDefault();
     }
@@ -74,9 +81,9 @@ const NewTab = () => {
                         <Input
                         fluid 
                         placeholder='New York Vacation' 
-                        value={tabDetails.name}
+                        value={tabDetails.title}
                         onChange={handleNewTabInputChange}
-                        id='tabNameInput'
+                        id='tabTitleInput'
                         required
                         />
                     </div>
