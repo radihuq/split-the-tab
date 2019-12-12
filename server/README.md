@@ -1,8 +1,7 @@
-# split-the-tab app server
-Boilerplate template for a Node & MongoDB app
+# Split The Tab Server
+Don't stress about people paying their share of the tab.
 
-### Dependencies
-* [Express](https://github.com/expressjs/express)
-* [Nodemon](https://github.com/remy/nodemon)
-* [Cors](https://github.com/expressjs/cors)
-* [Mongoose](https://github.com/Automattic/mongoose)
+### TO DO
+* Create & store user profiles
+* Increase security
+* Implement JSON Web Tokens

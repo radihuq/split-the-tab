@@ -1,6 +1,5 @@
-# Split The Tab
+# Split The Tab Client
 Don't stress about people paying their share of the tab.
-
 
 ### TO DO
 * Optimize for mobile
