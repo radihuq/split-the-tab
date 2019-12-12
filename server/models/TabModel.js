@@ -20,9 +20,14 @@ const TabSchema = mongoose.Schema({
             },
             budget: {
                 type: Number
+            },
+            public_id: {
+                type: String,
+                required: true
             }
         },
-        users: []
+        users: [],
+        feed: []
     },
     date: {
         type: Date,

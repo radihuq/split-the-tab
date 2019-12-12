@@ -9,7 +9,7 @@ const TabFeed = ({data}) => {
     return (
         <div>
             <List relaxed='very'>
-                {data.map((item, index) => (
+                {data.feed.slice(0).reverse().map((item, index) => (
                     <TabFeedPopulate item={item} key={`feeditem${index}`} />
                 ))}
             </List>

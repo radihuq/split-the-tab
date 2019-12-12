@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 55% 45%;
 }
 
 .dMenuLogoDiv {
@@ -51,4 +51,66 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.dMenuJoinTabParentDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dMenuJoinTabText {
+    text-align: center;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 1.5em;
+}
+
+.dMenuJoinTabInstructions {
+    color: rgba(214, 48, 49, 1);
+    font-size: 1em;
+}
+
+.dMenuJoinTabRecentTabsText {
+    margin: 1em 0;
+    width: 80%;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.dMenuJoinTabRecentTabsItem {
+    color: rgba(46, 134, 222, 0.8);
+    font-size: 1em;
+}
+
+.dMenuJoinTabRecentTabsItem:hover {
+    cursor: pointer;
+    color: rgba(46, 134, 222, 1);
+}
+
+.dMenuProfileUpdateFormItem {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.dMenuProfileUpdateInstructionsText {
+    font-size: 1em;
+}
+
+.dMenuProfileAvatarsSelectionDiv {
+    margin: 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dMenuProfileAvatarItem {
+    height: 50px;
+    width: 50px;
+    margin-right: 0.5em;
+}
+
+.dMenuProfileAvatarItemActive {
+    outline: 3px solid rgba(39, 174, 96, 1);
 }

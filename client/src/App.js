@@ -8,12 +8,16 @@ import Body from './Components/Body/Body';
 import Footer from './Components/Footer/Footer';
 import NewTab from './Components/App/NewTab/NewTab';
 import Tab from './Components/App/Tab/Tab';
-import Invite from './Components/App/Invite/Invite';
 import Payout from './Components/App/Payout/Payout';
 
 import 'semantic-ui-css/semantic.min.css';
 
 const DesktopApp = () => {
+
+    if (!localStorage.getItem('tabsUserID')) {
+        let userId = Math.random().toString(36).substr(2, 6);
+        localStorage.setItem('tabsUserID', userId);
+    }
 
     return (
         <div className="App">
@@ -27,7 +31,6 @@ const DesktopApp = () => {
                         <Switch>
                             <Route path="/newtab" exact component={NewTab} />
                             <Route path="/tab" exact component={Tab} />
-                            <Route path="/invite" exact component={Invite} />
                             <Route path="/tab/payout" exact component={Payout} />
                             <Route path="/" component={Body} />
                         </Switch>

@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import './Tab.css';
+
+import TabInviteModal from './TabInviteModal';
+import TabPayout from './TabPayout';
 
 import {Button, Statistic} from 'semantic-ui-react';
 
 const TabDetails = ({data, feed}) => {
+
+    const [inviteModalOpen, setInviteModalOpen] = useState(false);
+    const [calculateLoading, setCalculateLoading] = useState(false);
+    const [calculatePayout, setCaculatePayout] = useState(false);
 
     const history = useHistory();
 
@@ -13,27 +20,40 @@ const TabDetails = ({data, feed}) => {
         totalExpense += feed[i].amount;
     }
 
-    totalExpense = Math.round(totalExpense * 100) / 100;
+    totalExpense = (Math.round(totalExpense * 100) / 100).toFixed(2);
 
     const handleCalculatePayoutClick = () => {
-        history.push(`/tab/payout?id=${data.id}`);
+        // setCalculateLoading(true);
+        setCaculatePayout(!calculatePayout);
+    }
+
+    const handleCalculateLoading = () => {
+        setCalculateLoading(false);
+    }
+
+    const handleInviteModalOpenChange = () => {
+        setInviteModalOpen(!inviteModalOpen);
     }
 
     const handleInviteLinkClick = () => {
-        history.push(`/invite?id=${data.id}`);
+        setInviteModalOpen(!inviteModalOpen);
     }
 
     return (
         <div className="dTabDetailsDashboardDiv">
-            <div>
-                <Button color='teal' onClick={handleCalculatePayoutClick}>Calculate Payout</Button>
-                <Button onClick={handleInviteLinkClick}>Get Invite Link</Button>
-            </div>
-            
+            <TabInviteModal modalopen={inviteModalOpen} modalopenchange={handleInviteModalOpenChange} public_id={data.info.public_id} />
+
             <Statistic size='small'>
                 <Statistic.Value style={{fontFamily: 'Montserrat'}}>${totalExpense}</Statistic.Value>
                 <Statistic.Label style={{fontFamily: 'Montserrat', fontWeight: '300'}}>Total Expensed</Statistic.Label>
             </Statistic>
+
+            <div>
+                <Button color='teal' onClick={handleCalculatePayoutClick} loading={calculateLoading}>View Payout</Button>
+                <Button onClick={handleInviteLinkClick}>Get Invite Link</Button>
+            </div>
+
+            {calculatePayout ? <TabPayout feed={feed} totalexpensed={totalExpense} onloading={handleCalculateLoading} /> : null}
 
         </div>
     )
