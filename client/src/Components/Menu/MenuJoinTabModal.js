@@ -21,6 +21,8 @@ const MenuJoinTabModal = ({modalopen, modalopenchange}) => {
     let recentTabs;
     if (localStorage.getItem('tabs')) {
         recentTabs = JSON.parse(localStorage.getItem('tabs'));
+    } else {
+        recentTabs = [];
     }
 
     const handleCodeInputChange = (e) => {
