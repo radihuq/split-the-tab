@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800');
 
+.App {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .dParentDiv {
     height: 100vh;
     width: 100vw;
