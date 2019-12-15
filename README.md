@@ -3,6 +3,9 @@ Remove the awkwardness from asking your friends to pay you back.
 
 This platform allows you to collaboratively track your expenses with your peers. It can also calculate the best way to pay each other back using the minimum amount of transactions.
 
+### Demo
+[https://split.mrhuq.com](https://split.mrhuq.com)
+
 ### Installation
 Clone this repo to your machine and run `npm install`
 
