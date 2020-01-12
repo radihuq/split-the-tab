@@ -63,7 +63,7 @@ const Body = () => {
                             <Button fluid size='large' type='submit' style={{}}>START A TAB</Button>
                         </div>
                     </form>
-                    <p className="dBodyFoldQuestion">How does it work?</p>
+                    {/* <p className="dBodyFoldQuestion">How does it work?</p> */}
                 </div>
                 <div className="dBodyFoldDemoDiv" 
                     style={{

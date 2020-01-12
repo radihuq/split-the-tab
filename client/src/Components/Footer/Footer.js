@@ -29,9 +29,9 @@ const Footer = () => {
                 justifyContent: mobileScreen ? 'center' : 'flex-start'
             }}
         >
-            <p className="dFooterItem">{`Privacy Policy`}</p>
+            {/* <p className="dFooterItem">{`Privacy Policy`}</p>
             <p className="dFooterItem">{`Terms & Conditions`}</p>  
-            <p className="dFooterItem">{`Contact Us`}</p> 
+            <p className="dFooterItem">{`Contact Us`}</p>  */}
         </div>
     );
 }

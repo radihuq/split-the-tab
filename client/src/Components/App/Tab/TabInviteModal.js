@@ -26,12 +26,12 @@ const TabInviteModal = ({modalopen, modalopenchange, public_id}) => {
                     <Segment style={{width: '40%'}}>
                         <p className="dTabInviteText" style={{fontWeight: 600}}>{public_id}</p>
                     </Segment>
-                    <p className="dTabInviteText">or show this QR code</p>
+                    {/* <p className="dTabInviteText">or show this QR code</p>
                     <QRCode
                     value={public_id}
                     size={200}
                     style={{margin: '1em'}}
-                    />
+                    /> */}
                 </div>
             </Modal.Content>
         </Modal>
